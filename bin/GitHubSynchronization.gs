@@ -80,7 +80,7 @@ function SearchFolderByName(folderName)
 
 // https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app
 // https://riptutorial.com/google-apps-script/example/22010/create-a-new-text-file-in-google-root-drive-folder
-function downloadFile( url ,namefolder='01_ProyectoARIA', nameFile='testgoogle.txt') {
+function downloadFile( url, nameFile, nameFolder='01_ProyectoARIA') {
   var response = UrlFetchApp.fetch(url);
   var text = response.getContentText();
   var folder = SearchFolderByName(namefolder);
@@ -92,7 +92,7 @@ function GitHubSincronization(){
   var directory = "https://raw.githubusercontent.com/hoat23/VisionArtificialAndImageProcessing/master/bin/";
   var nameFile = "utils_imgprocessing.py";
   var url = directory + nameFile;
-  downloadFile(url, nameFolder='01_ProyectoARIA', nameFile='testgoogle.txt');
+  downloadFile(url, nameFile, nameFolder='01_ProyectoARIA');
 }
 
 
