@@ -5,6 +5,7 @@
 # Description: GoogleAppScript by synchronization Drive and Repository Files.
 # Notes: Just by one file
 **************************************************************************************/
+
 function findDirectory(list){
   // Set up the folderID Objects (dictionary)
   var folderID ={id:"None", error:"None"}
@@ -81,9 +82,7 @@ function SearchFolderByName(folderName)
 // https://riptutorial.com/google-apps-script/example/22010/create-a-new-text-file-in-google-root-drive-folder
 function downloadFile( url ,namefolder='01_ProyectoARIA', nameFile='testgoogle.txt') {
   var response = UrlFetchApp.fetch(url);
-  var text = response.getContentText()
-  var dirList = [directory];
-  var dir = findDirectory(dirList);
+  var text = response.getContentText();
   var folder = SearchFolderByName(namefolder);
   var file = folder.createFile(nameFile, text ); // DriveApp.createFile
   //debugger;  // Stop to observe if in debugger
